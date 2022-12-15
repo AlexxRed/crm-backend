@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 
-const playerSchema = Schema(
+const teacherSchema = Schema(
     {
         name: {
         type: String,
@@ -15,15 +15,15 @@ const playerSchema = Schema(
     { versionKey: false, timestamps: true }
     );
 
-const Player = model("player", playerSchema);
+const Teacher = model("player", teacherSchema);
 
 
-const joiPlayerShema = Joi.object({
+const joiTeacherShema = Joi.object({
     name: Joi.string(),
     totalScore: Joi.number(),
 });
 
 module.exports = {
-    Player,
-    joiPlayerShema
+    Teacher,
+    joiTeacherShema
 };

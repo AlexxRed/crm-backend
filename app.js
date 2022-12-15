@@ -6,7 +6,7 @@ const cors = require("cors");
 const dotenv = require('dotenv');
 dotenv.config()
 
-const topPlayersRouter = require('./routes/api/top')
+const teacherRouter = require('./routes/api/teacher')
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/top", topPlayersRouter);
+app.use("/api/teacher", teacherRouter);
 
 app.use((req, res) => {
     res.status(404).json({ message: "Not found" });
