@@ -1,4 +1,4 @@
-const { User } = require("../../models/user")
+const { User } = require("../../models/User")
 const { createError } = require("../../services")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -15,6 +15,7 @@ const register = async (req, res) => {
     }
     const hashPassword = await bcrypt.hash(password, 15);
 
+
     
     const result = await User.create({ ...req.body, password: hashPassword });
     const createdUser = await User.findOne({ email });
@@ -30,7 +31,6 @@ const register = async (req, res) => {
     res.status(201).json({
         name: foundUser.name,
         email: foundUser.email,
-        phone: foundUser.phone,
         token
     })
 }

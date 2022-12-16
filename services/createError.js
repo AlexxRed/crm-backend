@@ -74,6 +74,7 @@ const messages = {
     525: "SSL Handshake Failed",
     526: "Invalid SSL Certificate",
 }
+
 const createError = (status, message = messages[status])=> {
     const error = new Error(message);
     error.status = status;

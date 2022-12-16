@@ -1,8 +1,8 @@
-const  Shops  = require("../../models/shops");
+const  Subject  = require("../../models/Subject");
 
 
 const getAll = async (req, res, next) => {
-        const result = await Shops.find({});
+        const result = await Subject.find({});
         console.log("result",result)
         res.json(result)
 }

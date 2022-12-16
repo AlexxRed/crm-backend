@@ -1,5 +1,5 @@
 
-const { User } = require("../../models/user")
+const { User } = require("../../models/User")
 const { createError } = require("../../services")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -25,7 +25,6 @@ const login = async (req, res) => {
     res.json({
         name: user.name,
         email: user.email,
-        phone: user.phone,
         token
     })
 }
