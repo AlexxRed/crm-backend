@@ -6,4 +6,4 @@ const getOne = require('./getOne');
 module.exports = {
     getAll,
     getOne,
-}
+};

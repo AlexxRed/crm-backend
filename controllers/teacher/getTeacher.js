@@ -5,4 +5,4 @@ const getTeacher = async (req, res) => {
     res.json(result)
 }
 
-module.exports = getTeacher
+module.exports = getTeacher;

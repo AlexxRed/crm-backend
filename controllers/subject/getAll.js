@@ -7,4 +7,4 @@ const getAll = async (req, res, next) => {
         res.json(result)
 }
 
-module.exports = getAll
+module.exports = getAll;
