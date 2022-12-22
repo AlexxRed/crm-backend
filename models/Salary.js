@@ -14,4 +14,4 @@ const salarySchema = new Schema(
 
 const Salary = model('salary', salarySchema);
 
-module.exports = Salary
+module.exports = Salary;
