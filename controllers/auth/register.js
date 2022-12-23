@@ -14,9 +14,6 @@ const register = async (req, res) => {
         throw createError(409, 'Email is already in use')
     }
     const hashPassword = await bcrypt.hash(password, 15);
-
-
-    
     const result = await User.create({ ...req.body, password: hashPassword });
     const createdUser = await User.findOne({ email });
 
@@ -25,7 +22,7 @@ const register = async (req, res) => {
     }
 
     const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "24h" });
-
+    
     const foundUser = await User.findByIdAndUpdate(createdUser._id,{token})
 
     res.status(201).json({
